@@ -85,6 +85,9 @@ class Hmvc {
         {
             // Store the original request data and route.
             $originalInput = $this->request->input();
+            // the following codeblock will block the cli
+            // and remove them will not affects phpunit as I tested
+            /*
             $originalRoute = $this->router->getCurrentRoute();
 
             // Masking route to allow testing with PHPUnit.
@@ -92,6 +95,7 @@ class Hmvc {
             {
                 $originalRoute = new Route(new \Symfony\Component\HttpFoundation\Request());
             }
+            */
 
             $requestMethod = strtoupper($method);
 
